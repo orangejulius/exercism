@@ -2,10 +2,10 @@ class Bob {
   def hey(input : String) = {
     if (isAllCaps(input)) {
       "Whoa, chill out!"
-    } else if(isQuestion(input)) {
-      "Sure."
     } else if(isSilence(input)) {
       "Fine. Be that way!"
+    } else if(isQuestion(input)) {
+      "Sure."
     } else {
       "Whatever."
     }
@@ -18,7 +18,7 @@ class Bob {
   }
 
   def isQuestion(input: String) : Boolean = {
-    input.takeRight(1) == "?"
+    input.last == '?'
   }
 
   def hasLetters(input : String) : Boolean = {
@@ -26,6 +26,6 @@ class Bob {
   }
 
   def isSilence(input : String) : Boolean = {
-    input.matches("\\s*")
+    input.trim.isEmpty
   }
 }
